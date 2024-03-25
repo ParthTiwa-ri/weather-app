@@ -1,0 +1,249 @@
+.container {
+  margin: 0 5rem;
+  display: flex;
+  /* min-height: 100vh; */
+  gap: 3rem;
+}
+
+.left-content {
+  flex: 0 1 25%;
+  /* background-color: blue; */
+}
+
+.right-content {
+  flex: 1;
+  /* background-color: green; */
+}
+.left-cards {
+  margin-top: 2rem;
+}
+
+.weaper {
+  display: flex;
+  align-items: center;
+  padding: 1rem 0;
+  gap: 4rem;
+}
+
+.card {
+  background-color: var(--surface);
+  color: var(--on-surface);
+  padding: 3rem;
+  border-radius: var(--radius-28);
+}
+
+.heading {
+  color: var(--white);
+  font-size: var(--heading);
+  line-height: 1.1;
+}
+
+.title-1 {
+  font-size: var(--title-1);
+}
+.title-2 {
+  font-size: var(--title-2);
+}
+
+.title-3 {
+  font-size: var(--title-3);
+  font-weight: var(--weight-semiBold);
+}
+
+.meta-text {
+  color: var(--on-surface-variant);
+}
+.body-3 {
+  font-size: var(--body-3);
+  text-transform: capitalize;
+}
+.border-down {
+  border-bottom: 3px solid var(--white-alpha-8);
+  padding-bottom: 1.5rem;
+}
+.sup {
+  font-size: 4rem;
+}
+
+.meta-list {
+  padding-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.meta-item {
+  display: flex;
+  gap: 1rem;
+}
+.text-middle {
+  margin: 2rem 0;
+}
+.future-card {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.future-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.temp {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.temp > span {
+  color: var(--on-surface-variant-2);
+  font-size: var(--title-1);
+}
+
+.future-item > span {
+  color: var(--on-surface-variant);
+  font-size: var(--label-2);
+  font-weight: 600;
+}
+
+.today-details {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(min-content, 23rem));
+  gap: 2rem;
+}
+
+.card-dark {
+  background-color: var(--black-alpha-10);
+  padding: 3rem;
+  box-shadow: var(--shadow-2);
+}
+.item-1 {
+  grid-column: 1 / span 2;
+}
+
+.item-2 {
+  grid-column: 3 / span 2;
+}
+
+.main-text {
+  margin-bottom: 2rem;
+}
+.title-4 {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.good-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.good-text {
+  padding: 0.3rem 1.5rem;
+
+  color: var(--on-surface-variant);
+  font-weight: 600;
+  border-radius: var(--radius-28);
+}
+
+.air-detail {
+  display: flex;
+  margin-top: 2rem;
+  align-items: center;
+  justify-content: space-between;
+}
+.air-detail-flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+}
+.air-detail-flex > p {
+  font-size: 3rem;
+}
+.icon-big {
+  font-size: 4rem;
+}
+
+.icon-extra-big {
+  font-size: 4rem;
+}
+.icon-only-big {
+  font-size: 5rem;
+  margin-left: -1rem;
+}
+
+.small-text {
+  font-size: 1.2rem;
+}
+
+.flex-start {
+  align-items: flex-start;
+}
+.margin-top-icon {
+  margin-top: 1.2rem;
+}
+.four-small-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+.four-small-flex > p {
+  font-size: 3rem;
+}
+.flex-row {
+  display: flex;
+  gap: 1.5rem;
+}
+.today-card {
+  background-color: var(--surface);
+  color: var(--on-surface);
+  padding: 1rem 4rem;
+  border-radius: var(--radius-16);
+}
+.flex-item-today {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.loader-container {
+  height: 80vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* HTML: <div class="loader"></div> */
+.loader {
+  width: 50px;
+  padding: 8px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--on-surface);
+  --_m: conic-gradient(#0000 10%, #000), linear-gradient(#000 0 0) content-box;
+  -webkit-mask: var(--_m);
+  mask: var(--_m);
+  -webkit-mask-composite: source-out;
+  mask-composite: subtract;
+  animation: l3 1s infinite linear;
+}
+@keyframes l3 {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+.good {
+  background-color: var(--bg-aqi-1);
+}
+
+.bad {
+  background-color: var(--bg-aqi-5);
+  color: var(--white);
+}
