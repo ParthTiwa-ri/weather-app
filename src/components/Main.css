@@ -247,3 +247,36 @@
   background-color: var(--bg-aqi-5);
   color: var(--white);
 }
+
+@media (max-width: 1337px) {
+  .flex-row {
+    flex-wrap: wrap;
+  }
+  .today-detail {
+    display: none;
+  }
+}
+
+@media (max-width: 867px) {
+  .flex-row {
+    flex-wrap: wrap;
+  }
+  .today-detail {
+    display: none;
+  }
+  .left-cards {
+    margin-top: 0rem;
+  }
+  .title-heading {
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .right-content {
+    display: none;
+  }
+  .left-content {
+    flex: 1;
+  }
+}

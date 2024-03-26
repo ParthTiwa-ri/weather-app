@@ -30,8 +30,8 @@ function Header({
       </form>
 
       <button onClick={handleLocationClick} className="location">
-        <FaLocationCrosshairs className="icon" />
-        <span>Current Location</span>
+        <FaLocationCrosshairs className="icon icon-location" />
+        <span className="hidden-location">Current Location</span>
       </button>
     </header>
   );

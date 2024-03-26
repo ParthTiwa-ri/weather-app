@@ -197,7 +197,7 @@ function Main() {
           <div className="left-content">
             <section className="left-cards">
               <CurrentWeather weatherData={weatherData} />
-              <p className="title-2 text-middle">5 Days Forecast</p>
+              <p className="title-2  text-middle">5 Days Forecast</p>
               <ul className="card future-card">
                 {dailyData.map(
                   (item, index) =>
@@ -217,7 +217,9 @@ function Main() {
           <div className="right-content">
             <section className="left-cards">
               <div className="today-detail card">
-                <p className="title-1 main-text">Todays Highlight</p>
+                <p className="title-1 title-heading main-text">
+                  Todays Highlight
+                </p>
                 <div className="today-details">
                   <div className="card-dark item-1">
                     <div className="good-container">
@@ -236,20 +238,20 @@ function Main() {
                       <FaWind className="icon-big" />
                       <div className="air-detail-flex">
                         <span className="meta-text small-text">PM25</span>
-                        <p>{airPollution.components.pm2_5}</p>
+                        <p>{Math.trunc(airPollution.components.pm2_5)}</p>
                       </div>
                       <div className="air-detail-flex">
                         <span className="meta-text small-text">SO2</span>
-                        <p>{airPollution.components.so2}</p>
+                        <p>{Math.trunc(airPollution.components.so2)}</p>
                       </div>
                       <div className="air-detail-flex">
                         <span className="meta-text small-text">NO2</span>
-                        <p>{airPollution.components.no2}</p>
+                        <p>{Math.trunc(airPollution.components.no2)}</p>
                       </div>
 
                       <div className="air-detail-flex">
                         <span className="meta-text small-text">O3</span>
-                        <p>{airPollution.components.o3}</p>
+                        <p>{Math.trunc(airPollution.components.o3)}</p>
                       </div>
                     </div>
                   </div>
