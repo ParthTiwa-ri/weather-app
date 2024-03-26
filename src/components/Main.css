@@ -84,8 +84,10 @@
   gap: 2rem;
 }
 .future-item {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 0.5fr 1fr;
+
+  column-gap: 1.5rem;
   align-items: center;
 }
 
