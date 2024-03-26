@@ -99,7 +99,8 @@ export function groupByDate(data) {
 export function extractDailyTemperatures(weatherData) {
   if (!weatherData) return;
   const firstEntries = [];
-
+  // console.log(weatherData);
+  if (weatherData.cod === "404") return;
   // Iterate through each forecast entry
   weatherData.list.forEach((entry) => {
     // Check if the current entry is the first entry for its date

@@ -29,6 +29,7 @@ function Main() {
   //     lat: 28.6517178,
   //     lon: 77.2219388,
   //   });
+
   const [city, setCity] = useState("Delhi");
   const [loadingLocation, setLoadingLocation] = useState(false);
   const [searchValue, setSearchValue] = useState("");
@@ -43,7 +44,12 @@ function Main() {
         const response = await fetch(
           `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`
         );
+
         const data = await response.json();
+        console.log(data.cod);
+        if (data.cod === "404" || data.cod === "400") {
+          throw new Error("City Not Found");
+        }
         setWeatherData(data);
         setLoadingLocation(false); //
       } catch (error) {
@@ -62,6 +68,9 @@ function Main() {
           `https://api.openweathermap.org/data/2.5/forecast/?q=${city}&appid=${API_KEY}&units=metric&cnt=60`
         );
         const data = await response.json();
+        if (data.cod === "404" || data.cod === "400") {
+          return;
+        }
         setWeatherHourData(data);
         setLoadingLocation(false); //
       } catch (error) {
@@ -80,14 +89,20 @@ function Main() {
           `https://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${API_KEY}&units=metric&limit=1`
         );
         const data1 = await response1.json();
+        if (data1.length === 0 || data1.cod === "400") {
+          return;
+        }
+        console.log(data1);
 
         const { lat, lon } = data1[0];
-        console.log(lat, lon);
 
         const response = await fetch(
           `https://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`
         );
         const data = await response.json();
+        if (data.cod === "404" || data.cod === "400") {
+          throw new Error("City Not Found");
+        }
         setAirPollution(data.list[0]);
         setLoadingLocation(false); //
       } catch (error) {
@@ -139,8 +154,11 @@ function Main() {
             `https://api.openweathermap.org/geo/1.0/reverse?lat=${latitude}&lon=${longitude}&appid=${API_KEY}&units=metric`
           );
           const data = await response.json();
+          if (data.cod === "404" || data.cod === "400") {
+            throw new Error("City Not Found");
+          }
           setCity(data[0].name);
-          console.log(data);
+          // console.log(data);
           setLoadingLocation(false); //
         },
         (error) => {
