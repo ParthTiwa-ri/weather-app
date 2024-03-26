@@ -74,11 +74,15 @@ header {
     display: none;
   }
 
+  header {
+    margin: 0 2rem;
+  }
+
   .search-form {
     margin-left: auto;
     border-radius: 100%;
     justify-content: flex-end;
-    width: 60%;
+    width: 65%;
 
     margin-right: 2rem;
     /* background-color: transparent; */
