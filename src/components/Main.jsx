@@ -153,7 +153,8 @@ function Main() {
       console.error("Geolocation is not supported");
     }
   };
-  function handleForm() {
+  function handleForm(e) {
+    e.preventDefault();
     setCity(searchValue);
     setSearchValue("");
   }
@@ -322,7 +323,7 @@ function CurrentWeather({ weatherData }) {
           <sup className="sup">c</sup>
         </p>
         <img
-          src={`src/assets/images/weather_icons/${weatherData?.weather[0].icon}.png`}
+          src={`/assets/images/weather_icons/${weatherData?.weather[0].icon}.png`}
           alt="wether-logo"
           height={64}
           width={64}
@@ -354,7 +355,7 @@ function HourList({ dt, temp, icon }) {
     <li className="flex-item-today today-card">
       <span className="title-3 meta-text">{timestampToTime(dt)}</span>
       <img
-        src={`src/assets/images/weather_icons/${icon}.png`}
+        src={`/assets/images/weather_icons/${icon}.png`}
         alt="weather"
         height={42}
         width={42}
@@ -369,7 +370,7 @@ function FutureDay({ dt, icon, temp }) {
     <li className="future-item">
       <div className="temp">
         <img
-          src={`src/assets/images/weather_icons/${icon}.png`}
+          src={`/assets/images/weather_icons/${icon}.png`}
           alt="temp-icon"
           height={36}
           width={36}

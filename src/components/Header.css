@@ -58,3 +58,13 @@ header {
   transform: translateY(2px); /* Move down further on click */
   transition: transform 0.1s ease-in-out;
 }
+.logo a {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.title-0 {
+  font-size: 3rem;
+  margin-bottom: 0;
+}

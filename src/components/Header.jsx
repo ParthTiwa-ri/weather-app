@@ -13,7 +13,8 @@ function Header({
     <header>
       <div className="logo">
         <a href="#">
-          <img src="../src/assets/images/logo.png" alt="logo" />
+          <img src="/assets/images/image.png" alt="logo" />
+          <p className="title-0">weatherSpark</p>
         </a>
       </div>
 
