@@ -260,6 +260,9 @@
 }
 
 @media (max-width: 867px) {
+  .container {
+    margin: 0 2rem;
+  }
   .flex-row {
     flex-wrap: wrap;
   }
